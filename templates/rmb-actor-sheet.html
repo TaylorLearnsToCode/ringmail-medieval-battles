@@ -1,0 +1,197 @@
+<form class="rmb-actor-sheet-form" autocomplete="off">
+  <!-- Normal Unit Header -->
+  <header>
+    <img
+      class="profile-img www-char-icon"
+      src="{{data.img}}"
+      data-edit="img"
+      title="{{data.name}}"
+      height="100"
+      width="100"
+    />
+    <h1>
+      <input name="name" type="text" value="{{data.name}}" />
+    </h1>
+    <span class="header__strength grid--label-value-max">
+      <label>Strength</label>
+      <input
+        name="data.strength.value"
+        type="number"
+        value="{{sheetData.strength.value}}"
+      />
+      <span>/</span>
+      <input
+        name="data.strength.max"
+        type="number"
+        value="{{sheetData.strength.max}}"
+      />
+    </span>
+    <span class="header__fatigue grid--label-input">
+      <label>Fatigue</label>
+      <input
+        name="data.fatigue.value"
+        type="number"
+        value="{{sheetData.fatigue.value}}"
+      />
+    </span>
+  </header>
+
+  <!-- Unit Details Table -->
+  <table class="unit-data">
+    <colgroup>
+      {{#nTimes 6}}
+      <col style="width: 16%" />
+      {{/nTimes}}
+    </colgroup>
+    <tr>
+      <th colspan="3">Fights As</th>
+      <th>Shielded?</th>
+      <th>Points Each</th>
+      <th>Unit Value</th>
+    </tr>
+    <tr>
+      <td>
+        <input
+          name="data.fightsAs.no"
+          type="number"
+          value="{{sheetData.fightsAs.no}}"
+        />
+      </td>
+      <td>
+        <select
+          name="data.fightsAs.weight"
+          value="{{sheetData.fightsAs.weight}}"
+        >
+          {{#select sheetData.fightsAs.weight}} {{#each TROOP_WEIGHTS}}
+          <option value="{{this}}">{{this}}</option>
+          {{/each}} {{/select}}
+        </select>
+      </td>
+      <td>
+        <select name="data.fightsAs.type" value="{{sheetData.fightsAs.type}}">
+          {{#select sheetData.fightsAs.type}} {{#each TROOP_TYPES}}
+          <option value="{{this}}">{{this}}</option>
+          {{/each}} {{/select}}
+        </select>
+      </td>
+      <td>
+        <select name="data.isShielded" value="{{sheetData.isShielded}}">
+          {{#select sheetData.isShielded}}
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+          {{/select}}
+        </select>
+      </td>
+      <td>
+        <input
+          name="data.pointsEach"
+          type="number"
+          value="{{sheetData.pointsEach}}"
+        />
+      </td>
+      <td>{{ sheetData.pointsTotal }}</td>
+    </tr>
+    <tr>
+      <th colspan="3">Movement</th>
+      <th colspan="3">Morale</th>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table>
+          <tr>
+            <th>Std.</th>
+            <th>Charge</th>
+            <th>Road</th>
+          </tr>
+          <tr>
+            <td>
+              <input
+                name="data.movement.standard"
+                type="number"
+                value="{{sheetData.movement.standard}}"
+              />
+            </td>
+            <td>
+              <input
+                name="data.movement.charge"
+                type="number"
+                value="{{sheetData.movement.charge}}"
+              />
+            </td>
+            <td>
+              <input
+                name="data.movement.road"
+                type="number"
+                value="{{sheetData.movement.road}}"
+              />
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td colspan="3">
+        <table>
+          <tr>
+            <th colspan="2">Instability</th>
+            <th>Stand Ground</th>
+          </tr>
+          <tr>
+            <td class="datum--input-with-postfix">
+              <input
+                name="data.morale.instability"
+                type="number"
+                value="{{sheetData.morale.instability}}"
+              />
+              <span>@</span>
+            </td>
+            <td class="datum--input-with-postfix">
+              <input
+                name="data.morale.instabilityAt"
+                type="number"
+                value="{{sheetData.morale.instabilityAt}}"
+              />
+              <span>%</span>
+            </td>
+            <td>
+              <input
+                name="data.morale.standGround"
+                type="number"
+                value="{{sheetData.morale.standGround}}"
+              />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Special Rules & Armaments Section -->
+  <section>
+    <label>Special Rules or Arms</label>
+    <ul>
+      {{#each sheetItems as |item|}}
+      <li>
+        <input
+          class="special-rule-input"
+          type="text"
+          data-field="name"
+          data-target="{{item._id}}"
+          value="{{item.name}}"
+        />
+        <input
+          class="special-rule-input"
+          type="text"
+          data-field="description"
+          data-target="{{item._id}}"
+          value="{{item.data.description}}"
+        />
+        <a class="special-rule" data-action="remove" data-target="{{item._id}}">
+          <i class="fas fa-trash"></i>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+    <div>
+      <a class="special-rule" data-action="add">+ Add Row</a>
+    </div>
+  </section>
+</form>

@@ -1,0 +1,40 @@
+{
+  "Actor": {
+    "types": ["unit"],
+    "unit": {
+      "fightsAs": {
+        "no": 1,
+        "weight": "",
+        "type": ""
+      },
+      "isShielded": false,
+      "movement": {
+        "standard": 0,
+        "charge": 0,
+        "road": 0
+      },
+      "strength": {
+        "value": 20,
+        "min": 0,
+        "max": 20
+      },
+      "fatigue": {
+        "value": 0,
+        "min": 0,
+        "max": 5
+      },
+      "morale": {
+        "instability": 0,
+        "instabilityAt": 0,
+        "standGround": 0
+      },
+      "pointsEach": 0
+    }
+  },
+  "Item": {
+    "types": ["special"],
+    "special": {
+      "description": ""
+    }
+  }
+}
