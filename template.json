@@ -26,7 +26,8 @@
       "morale": {
         "instability": 0,
         "instabilityAt": 0,
-        "standGround": 0
+        "standGround": 0,
+        "value": 0
       },
       "pointsEach": 0
     }

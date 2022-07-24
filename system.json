@@ -2,7 +2,7 @@
   "name": "ringmail-medieval-battles",
   "title": "Ringmail: Medieval Battles",
   "description": "Ringmail: Medieval Battles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "ClericsWearRingmail",
   "esmodules": ["modules/rmb-system.mjs"],
   "styles": ["styles/rmb-global.css"],
