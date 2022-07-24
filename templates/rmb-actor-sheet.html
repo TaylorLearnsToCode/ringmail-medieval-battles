@@ -97,8 +97,9 @@
     </tr>
     <tr>
       <td colspan="3">
+        <!-- Movement Subtable -->
         <table>
-          <tr>
+          <tr class="table-border--right">
             <th>Std.</th>
             <th>Charge</th>
             <th>Road</th>
@@ -129,12 +130,21 @@
         </table>
       </td>
       <td colspan="3">
+        <!-- Morale Subtable -->
         <table>
-          <tr>
+          <tr class="table-border--left">
+            <th>Value</th>
             <th colspan="2">Instability</th>
-            <th>Stand Ground</th>
+            <th>Stand</th>
           </tr>
           <tr>
+            <td>
+              <input
+                name="data.morale.value"
+                type="number"
+                value="{{sheetData.morale.value}}"
+              />
+            </td>
             <td class="datum--input-with-postfix">
               <input
                 name="data.morale.instability"

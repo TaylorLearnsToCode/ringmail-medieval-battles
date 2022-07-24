@@ -33,7 +33,7 @@ label {
   text-align: center;
 }
 
-/* Unit Sheet Header */
+/* Actor Sheet */
 .rmb-actor-sheet-form header {
   display: grid;
   grid-gap: 5px;
@@ -76,4 +76,12 @@ label {
   grid-gap: 5px;
   grid-template-columns: 1fr 3fr 2em;
   margin-bottom: 5px;
+}
+
+.rmb-actor-sheet-form tr.table-border--left {
+  border-left: solid 1px rgb(130, 129, 125);
+}
+
+.rmb-actor-sheet-form tr.table-border--right {
+  border-right: solid 1px rgb(130, 129, 125);
 }
