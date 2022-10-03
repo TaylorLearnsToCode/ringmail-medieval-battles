@@ -2,7 +2,7 @@
   "name": "ringmail-medieval-battles",
   "title": "Ringmail: Medieval Battles",
   "description": "Ringmail: Medieval Battles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "ClericsWearRingmail",
   "esmodules": ["modules/rmb-system.mjs"],
   "styles": ["styles/rmb-global.css"],
@@ -12,7 +12,7 @@
   "gridUnits": "in",
   "primaryTokenAttribute": "strength",
   "secondaryTokenAttribute": "fatigue",
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/TaylorLearnsToCode/ringmail-medieval-battles",
+  "manifest": "https://raw.githubusercontent.com/TaylorLearnsToCode/ringmail-medieval-battles/master/system.json",
+  "download": "https://github.com/TaylorLearnsToCode/ringmail-medieval-battles/archive/refs/heads/master.zip"
 }
